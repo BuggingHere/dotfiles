@@ -1,0 +1,94 @@
+// ───────────────────────────────────────────────────────────────────
+//  「✦ WAYBAR CONFIG ✦ 」
+// ───────────────────────────────────────────────────────────────────
+
+// ── BAR SETTINGS ───────────────────────────────────────────────────
+{
+  "layer": "top",
+  "exclusive": true,
+  "position": "top",
+  "margin-top": 3,
+  "height": 28,
+  "reload_style_on_change": true,
+
+// ── MODULES ────────────────────────────────────────────────────────
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "tray",
+    "custom/pomo",
+    "wireplumber",
+    "battery",
+    "backlight"
+  ],
+
+// ── WORKSPACES ─────────────────────────────────────────────────────
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+// ── CLOCK ──────────────────────────────────────────────────────────
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a, %d %b}",
+    "tooltip": false
+  },
+
+// ── AUDIO ──────────────────────────────────────────────────────────
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+
+// ── BATTERY ────────────────────────────────────────────────────────
+  "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": ["󰂃","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂"],
+    "tooltip": false
+  },
+
+// ── POMODORO ───────────────────────────────────────────────────────
+  "custom/pomo": {
+    "exec": "~/.config/waybar/scripts/pomo.sh",
+    "on-click": "~/.config/waybar/scripts/pomo.sh toggle",
+    "interval": 1,
+    "return-type": "json",
+    "format": " {}"
+  },
+
+// ── TRAY ───────────────────────────────────────────────────────────
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  "backlight": {
+    "device": " ",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", ""]
+  }
+}

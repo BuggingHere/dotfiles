@@ -1,0 +1,3 @@
+# Enable recoloring
+set recolor "true"
+include ~/.cache/wal/colors-zathura

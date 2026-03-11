@@ -1,0 +1,94 @@
+/* ───────────────────────────────────────────────────────────────────
+   「✦ WAYBAR STYLES ✦ 」
+   ──────────────────────────────────────────────────────────────── */
+
+/* ── IMPORTS ──────────────────────────────────────────────────────*/
+@import "../../.cache/wal/colors-waybar.css";
+
+/* ── GLOBAL ───────────────────────────────────────────────────────*/
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  min-height: 16px;
+}
+
+window#waybar {
+  background: transparent;
+  color: @foreground;
+  margin: 50px;
+}
+
+/* ── MODULES CONTAINER ────────────────────────────────────────────*/
+.modules-left {
+  background: alpha(@background,0.3);
+  border: 1px solid #5E5E5E;
+  border-radius: 15px;
+  padding: 3px 6px;
+  margin-left: 2px;
+  padding-right: 0px;
+}
+.modules-center {
+  background: alpha(@background,0.3);
+  border: 1px solid #5E5E5E;
+  border-radius: 15px;
+  padding: 3px 2px;
+}
+
+.modules-right {
+  background: alpha(@background,0.3);
+  border: 1px solid #5E5E5E;
+  border-radius: 15px;
+  padding: 3px 2px;
+  margin-right: 2px;
+}
+
+
+/* ── WORKSPACES ───────────────────────────────────────────────────*/
+#workspaces {
+  margin-right: 3px;
+  padding-right: 2px;
+}
+
+#workspaces button {
+  padding: 0 2px;
+  color: alpha(@color7, 0.4);
+  transition: 0.3s ease;
+}
+
+#workspaces button:hover {
+  background: none;
+  color: @foreground;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button.active {
+  color: @color5;
+}
+
+/* ── MODULES ──────────────────────────────────────────────────────*/
+#clock,
+#backlight,
+#battery,
+#wireplumber,
+#custom-pomo,
+#tray {
+  padding: 0 8px;
+  margin: 0;
+}
+
+#clock:hover,
+#battery:hover,
+#wireplumber:hover,
+#custom-pomo:hover {
+  background: alpha(@foreground, 0.1);
+  border-radius: 2px;
+}
+
+/* ── POMODORO ─────────────────────────────────────────────────────*/
+#custom-pomo {
+  color: alpha(@foreground, 0.6);
+  font-weight: bold;
+}
