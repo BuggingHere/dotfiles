@@ -1,1 +1,1 @@
-My Archlinux hyprland dotifiles
+My Archlinux hyprland dotfiles
