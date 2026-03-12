@@ -10,14 +10,13 @@
   font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 14px;
   border: none;
-  border-radius: 0;
+  border-radius: 0px;
   min-height: 16px;
 }
 
 window#waybar {
   background: transparent;
   color: @foreground;
-  margin: 50px;
 }
 
 /* ── MODULES CONTAINER ────────────────────────────────────────────*/
@@ -25,7 +24,7 @@ window#waybar {
   background: alpha(@background,0.3);
   border: 1px solid #5E5E5E;
   border-radius: 15px;
-  padding: 3px 6px;
+  padding: 0px 6px;
   margin-left: 2px;
   padding-right: 0px;
 }
@@ -79,16 +78,18 @@ window#waybar {
   margin: 0;
 }
 
+#tray:hover,
 #clock:hover,
 #battery:hover,
 #wireplumber:hover,
-#custom-pomo:hover {
+#custom-pomo:hover,
+#backlight:hover {
   background: alpha(@foreground, 0.1);
   border-radius: 2px;
 }
 
-/* ── POMODORO ─────────────────────────────────────────────────────*/
-#custom-pomo {
-  color: alpha(@foreground, 0.6);
-  font-weight: bold;
-}
+#custom-pomo.work  { color: #a3be8c; font-weight: bold; }
+#custom-pomo.break { color: #88c0d0; font-weight: bold; }
+#custom-pomo.long  { color: #b48ead; background: rgba(180,142,173,0.15); font-weight: bold; }
+#custom-pomo.idle  { color: #616e88; font-weight: bold; }
+#custom-pomo.finished { color: #bf616a; animation: blink 1.2s infinite; }
