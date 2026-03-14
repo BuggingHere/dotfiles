@@ -45,11 +45,14 @@ networkmanager
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+nwg-look
 pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
 power-profiles-daemon
+qt5ct
+qt6ct
 ripgrep
 rofi
 rsync
