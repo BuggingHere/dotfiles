@@ -65,6 +65,16 @@ alias path='echo -e ${PATH//:/\\n}' # print PATH nicely
 alias ff='fastfetch --config examples/13.jsonc'
 
 source ~/.cache/wal/colors.sh
+source /usr/share/doc/pkgfile/command-not-found.bash
 
+complete -cf sudo
+
+set -o history
 export PS1='\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]\$ '
+export HISTCONTROL="erasedups:ignorespace"
 shopt -s cdspell
+shopt -s checkwinsize
+bind '"\t": menu-complete'
+bind '"\e[Z": menu-complete-backward'
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'

@@ -64,7 +64,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: @color5;
+  color: @color10;
 }
 
 /* ── MODULES ──────────────────────────────────────────────────────*/
