@@ -62,7 +62,7 @@ alias diff='diff --color=auto'
 alias now='date "+%Y-%m-%d %H:%M:%S"'
 alias week='date +%V'               # current week number
 alias path='echo -e ${PATH//:/\\n}' # print PATH nicely
-alias ff='fastfetch --config examples/13.jsonc'
+alias nf='fastfetch --config neofetch'
 
 source ~/.cache/wal/colors.sh
 source /usr/share/doc/pkgfile/command-not-found.bash
