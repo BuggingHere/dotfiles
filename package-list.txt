@@ -50,6 +50,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+pkgfile
 power-profiles-daemon
 qt5ct
 qt6ct
