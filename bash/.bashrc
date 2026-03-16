@@ -78,3 +78,6 @@ bind '"\e[Z": menu-complete-backward'
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 set show-all-if-ambiguous on
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
