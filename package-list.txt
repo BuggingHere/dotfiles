@@ -18,6 +18,7 @@ efibootmgr
 fastfetch
 ffmpeg
 ffmpegthumbnailer
+fzf
 git
 greetd-tuigreet
 grub
@@ -32,9 +33,11 @@ hyprpolkitagent
 hyprshot
 imv
 kitty
+libcanberra
 libpulse
 linux-firmware
 linux-zen
+linux-zen-headers
 mako
 man-db
 man-pages

@@ -93,5 +93,12 @@
     "device": " ",
     "format": "{icon} {percent}%",
     "format-icons": ["", ""]
+  },
+
+  "custom/mako": {
+    "format": " ",
+    "on-click": "makoctl dismiss -a",
+    "interval": 1
   }
+
 }

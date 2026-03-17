@@ -1,0 +1,5 @@
+hyprshutdown
+hyprshutdown-debug
+python-pywal16
+yay
+yay-debug
