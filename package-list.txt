@@ -34,7 +34,9 @@ hyprshot
 imv
 kitty
 libcanberra
+libmythes
 libpulse
+libreoffice-fresh
 linux-firmware
 linux-zen
 linux-zen-headers
@@ -42,6 +44,7 @@ mako
 man-db
 man-pages
 mpv
+mythes-en
 neovim
 network-manager-applet
 networkmanager

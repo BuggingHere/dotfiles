@@ -1,8 +1,8 @@
 include=~/.cache/wal/colors-mako
-font=JetBrainsMono Nerd Font 11
+font=Noto Sans 12
 anchor=top-right
 border-size=1
-border-radius=10
+border-radius=0
 padding=12
 layer=overlay
 default-timeout=5000
