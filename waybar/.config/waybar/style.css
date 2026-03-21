@@ -74,9 +74,15 @@ window#waybar {
 /* ── MODULES ──────────────────────────────────────────────────────*/
 #clock,
 #backlight,
+#cpu,
+#memory,
 #battery,
 #wireplumber,
 #custom-pomo,
+#group-power,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
 #tray {
   padding: 0 8px;
   margin: 0;
@@ -85,6 +91,9 @@ window#waybar {
 #tray:hover,
 #clock:hover,
 #battery:hover,
+#cpu:hover,
+#custom-mako:hover,
+#memory:hover,
 #wireplumber:hover,
 #custom-pomo:hover,
 #backlight:hover {
