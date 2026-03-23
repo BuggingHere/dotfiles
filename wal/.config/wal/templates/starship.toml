@@ -10,7 +10,7 @@ add_newline = false
 
 # ── DIRECTORY ───────────────────────────────────────────────
 [directory]
-style            = "bold fg:#88c0d0"
+style             = "bold fg:{color4}"
 truncation_length = 3
 truncate_to_repo  = true
 format            = "[$path]($style) "
@@ -18,13 +18,13 @@ format            = "[$path]($style) "
 # ── GIT BRANCH ──────────────────────────────────────────────
 [git_branch]
 symbol = " "
-style  = "fg:#b48ead"
+style  = "fg:{color5}"
 format = "[$symbol$branch]($style) "
 
 # ── GIT STATUS ──────────────────────────────────────────────
 [git_status]
-style     = "fg:#bf616a"
-format    = "([$all_status$ahead_behind]($style) )"
+style      = "fg:{color1}"
+format     = "([$all_status$ahead_behind]($style) )"
 conflicted = "="
 ahead      = "⇡${count}"
 behind     = "⇣${count}"
@@ -36,8 +36,8 @@ deleted    = "✘${count}"
 
 # ── CHARACTER ───────────────────────────────────────────────
 [character]
-success_symbol = "[❯](bold fg:#a3be8c)"
-error_symbol   = "[❯](bold fg:#bf616a)"
+success_symbol = "[❯](bold fg:{color2})"
+error_symbol   = "[❯](bold fg:{color1})"
 
 # ── DISABLED MODULES ────────────────────────────────────────
 [cmd_duration]
