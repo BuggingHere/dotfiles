@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# ────────────────────────────────────────────────────────────────────
-#  「✦ WALLPAPER PICKER ✦ 」
-# ────────────────────────────────────────────────────────────────────
-# INTERACTIVE WALLPAPER SELECTOR USING ROFI WITH PYWAL COLOR GENERATION
-# ────────────────────────────────────────────────────────────────────
+# ============================================================
+#  WALLPAPER PICKER
+#  Interactive wallpaper selector with pywal color generation
+# ============================================================
+set -eo pipefail
 
-set -u
-
-WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/Wallpapers/}"
+WALLPAPER_DIR="${WALLPAPER_DIR:-$HOME/Pictures/Wallpapers}"
 HYPRPAPER_CONF="${HYPRPAPER_CONF:-$HOME/.config/hypr/hyprpaper.conf}"
 HYPRLOCK_CONF="${HYPRLOCK_CONF:-$HOME/.config/hypr/hyprlock.conf}"
+
+# ── HELPERS ─────────────────────────────────────────────────
 
 persist_wallpaper_path() {
   local conf_file="$1"
@@ -22,6 +22,8 @@ persist_wallpaper_path() {
   sed -i "0,/^[[:space:]]*path[[:space:]]*=.*/s|^[[:space:]]*path[[:space:]]*=.*|    path = $escaped_path|" "$conf_file"
 }
 
+# ── WALLPAPER SELECTION ──────────────────────────────────────
+
 CHOICE=$(
   find "$WALLPAPER_DIR" -maxdepth 1 -type f \
     \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) |
@@ -33,48 +35,51 @@ CHOICE=$(
       -p "Select Wallpaper" \
       -theme "$HOME/.config/rofi/themes/glass.rasi" \
       -theme-str '
-      window {
-        width: 58%;
-      }
-
-      listview {
-        layout: vertical;
-        columns: 3;
-        fixed-columns: true;
-        lines: 3;
-        fixed-height: false;
-        dynamic: true;
-      }
-
-      element {
-        orientation: vertical;
-      }
-
-      element-icon {
-        size: 200px;
-        horizontal-align: 0.5;
-        margin: 0px 0px 2px 0px;
-      }
-
-      element-text {
-        horizontal-align: 0.5;
-      }
-      '
+            window {
+                width: 58%;
+            }
+            listview {
+                layout:        vertical;
+                columns:       3;
+                fixed-columns: true;
+                lines:         3;
+                fixed-height:  false;
+                dynamic:       true;
+            }
+            element {
+                orientation: vertical;
+            }
+            element-icon {
+                size:             200px;
+                horizontal-align: 0.5;
+                margin:           0px 0px 2px 0px;
+            }
+            element-text {
+                horizontal-align: 0.5;
+            }
+            '
 )
 
 [[ -z "$CHOICE" ]] && exit 0
 
+# ── APPLY ───────────────────────────────────────────────────
+
 WALLPAPER="$WALLPAPER_DIR/$CHOICE"
 
-[[ ! -f "$WALLPAPER" ]] && exit 1
+[[ -f "$WALLPAPER" ]] || {
+  notify-send "Wallpaper Error" "File not found: $CHOICE"
+  exit 1
+}
 
 hyprctl hyprpaper preload "$WALLPAPER" >/dev/null 2>&1 || true
+
 hyprctl hyprpaper wallpaper ",$WALLPAPER" || {
-  notify-send "Wallpaper Error" "hyprpaper failed"
+  notify-send "Wallpaper Error" "hyprpaper failed to apply wallpaper"
   exit 1
 }
 
 wal -i "$WALLPAPER" -n -q
+
 persist_wallpaper_path "$HYPRPAPER_CONF" "$WALLPAPER"
 persist_wallpaper_path "$HYPRLOCK_CONF" "$WALLPAPER"
 

@@ -1,0 +1,7 @@
+apple-fonts
+apple-sf-fonts
+hyprshutdown
+nerd-fonts-noto-sans-mono
+python-pywal16
+yay
+yay-debug

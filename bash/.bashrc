@@ -79,3 +79,5 @@ shopt -s globstar
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+eval "$(starship init bash)"
+export STARSHIP_CONFIG="$HOME/.cache/wal/starship.toml"

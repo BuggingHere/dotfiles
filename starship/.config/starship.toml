@@ -1,0 +1,56 @@
+# ============================================================
+#  STARSHIP CONFIG
+# ============================================================
+
+# ── PROMPT ──────────────────────────────────────────────────
+format = """
+$directory$git_branch$git_status$character"""
+
+add_newline = false
+
+# ── DIRECTORY ───────────────────────────────────────────────
+[directory]
+style            = "bold fg:#88c0d0"
+truncation_length = 3
+truncate_to_repo  = true
+format            = "[$path]($style) "
+
+# ── GIT BRANCH ──────────────────────────────────────────────
+[git_branch]
+symbol = " "
+style  = "fg:#b48ead"
+format = "[$symbol$branch]($style) "
+
+# ── GIT STATUS ──────────────────────────────────────────────
+[git_status]
+style     = "fg:#bf616a"
+format    = "([$all_status$ahead_behind]($style) )"
+conflicted = "="
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕⇡${ahead_count}⇣${behind_count}"
+modified   = "!${count}"
+untracked  = "?${count}"
+staged     = "+${count}"
+deleted    = "✘${count}"
+
+# ── CHARACTER ───────────────────────────────────────────────
+[character]
+success_symbol = "[❯](bold fg:#a3be8c)"
+error_symbol   = "[❯](bold fg:#bf616a)"
+
+# ── DISABLED MODULES ────────────────────────────────────────
+[cmd_duration]
+disabled = true
+
+[time]
+disabled = true
+
+[battery]
+disabled = true
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
