@@ -75,11 +75,7 @@ export PS1='\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export HISTCONTROL="erasedups:ignorespace"
 shopt -s cdspell
 shopt -s checkwinsize
-bind '"\t": menu-complete'
-bind '"\e[Z": menu-complete-backward'
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-set show-all-if-ambiguous on
+shopt -s globstar
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"

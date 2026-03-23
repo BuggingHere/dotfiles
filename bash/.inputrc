@@ -1,0 +1,6 @@
+"\t": menu-complete
+
+"\e[Z": menu-complete-backward
+
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
