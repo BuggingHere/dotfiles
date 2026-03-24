@@ -9,12 +9,14 @@ bluetui
 bluez
 bluez-utils
 brightnessctl
+btop
 chromium
 cliphist
 cups
 cups-pk-helper
 dmidecode
 efibootmgr
+eza
 fastfetch
 ffmpeg
 ffmpegthumbnailer
@@ -72,6 +74,7 @@ stow
 sudo
 system-config-printer
 thunar
+trash-cli
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
 tumbler
@@ -86,4 +89,5 @@ xdg-desktop-portal-gtk
 yazi
 zathura
 zathura-pdf-mupdf
+zoxide
 zram-generator
