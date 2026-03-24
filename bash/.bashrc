@@ -100,7 +100,7 @@ alias vim='nvim'
 alias now='date "+%Y-%m-%d %H:%M:%S"'
 alias week='date +%V'
 alias path='echo -e ${PATH//:/\\n}'
-alias nf='fastfetch --config neofetch'
+alias ff='fastfetch --config examples/13.jsonc'
 
 # ── FZF ──────────────────────────────────────────────────────
 export FZF_DEFAULT_OPTS="
