@@ -7,7 +7,7 @@
 
 /* ── GLOBAL ─────────────────────────────────────────────────*/
 * {
-    font-family: "JetBrainsMonoNL Nerd Font Propo";
+    font-family: "JetBrainsMono Nerd Font Propo";
     font-size:   12px;
     border:        none;
     border-radius: 0px;
@@ -23,7 +23,7 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-    background:    alpha(@background, 0.3);
+    background:    #000;
     border:        1px solid #5E5E5E;
     border-radius: 15px;
     padding:       3px 6px;
@@ -62,7 +62,6 @@ window#waybar {
 #battery,
 #wireplumber,
 #custom-pomo,
-#custom-mako,
 #group-power,
 #custom-quit,
 #custom-lock,
@@ -79,11 +78,24 @@ window#waybar {
 #battery:hover,
 #wireplumber:hover,
 #custom-pomo:hover,
-#custom-mako:hover,
 #tray:hover {
     background:    alpha(@foreground, 0.1);
     border-radius: 2px;
 }
+
+/* ── NETWORK ─────────────────────────────────────────────────*/
+#network {
+    padding: 0 8px;
+    margin:  0;
+}
+
+#network:hover {
+    background:    alpha(@foreground, 0.1);
+    border-radius: 2px;
+}
+
+#network.disconnected { color: alpha(@foreground, 0.4); }
+#network.disabled     { color: alpha(@foreground, 0.2); }
 
 /* ── BATTERY STATES ─────────────────────────────────────────*/
 #battery.warning  { color: #ebcb8b; }
@@ -97,6 +109,6 @@ window#waybar {
 #custom-pomo.idle  { color: #616e88; font-weight: bold; }
 
 #custom-pomo.finished {
-    color:     #bf616a;
+    color:   #bf616a;
     opacity: 0.4;
 }

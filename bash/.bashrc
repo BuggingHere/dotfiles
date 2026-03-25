@@ -124,5 +124,8 @@ eval "$(fzf --bash)"
 # ── ZOXIDE ───────────────────────────────────────────────────
 eval "$(zoxide init bash --cmd cd)"
 
+# -- SOURCE ---------------------------------------------------
+source ~/.config/bash/fzf-pacman.sh
+source ~/.config/bash/fzf-tools.sh
 # ── STARSHIP ─────────────────────────────────────────────────
 eval "$(starship init bash)"
