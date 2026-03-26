@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # ============================================================
 #  FZF-PACMAN
 #  Interactive package manager using fzf
@@ -24,8 +24,8 @@ fzf-pacman() {
 
     _confirm() {
         echo -e "\n$1"
-        read -r -p "Proceed? [y/N] " ans
-        [[ "${ans,,}" == "y" ]]
+        read -r "ans?Proceed? [y/N] "
+        [[ "${ans:l}" == "y" ]]
     }
 
     _no_selection() { echo "No packages selected. Aborting."; }

@@ -9,9 +9,7 @@ kitty \
   --override initial_window_width=900 \
   --override initial_window_height=600 \
   --override background_opacity=0.85 \
-  bash -c '
-source ~/.config/bash/fzf-pacman.sh
-
+  bash -i -c '
 while true; do
     CHOICE=$(printf "  Install\n  Remove\n  Orphans\n  AUR Install\n  AUR Remove\n  Info\n  Update\n  Log\n  Quit" \
         | rofi \

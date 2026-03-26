@@ -1,0 +1,45 @@
+#compdef fzf-pacman
+
+_fzf-pacman() {
+    local -a cmds subcmds
+
+    cmds=(
+        'install: fuzzy search and install from official repos'
+        'remove: fuzzy search and remove installed packages'
+        'orphans: find and remove orphaned packages'
+        'aur: fuzzy search AUR packages (install/remove)'
+        'info: browse package information'
+        'log: browse pacman transaction log'
+        'update: select and install available updates'
+        'help: show usage information'
+    )
+
+    _arguments \
+        '1: :->command' \
+        '*:: :->args' \
+        && return 0
+
+    case $state in
+        command)
+            _describe -t commands 'fzf-pacman command' cmds
+            ;;
+
+        args)
+            case $words[2] in
+                aur)
+                    subcmds=(
+                        'install: fuzzy search and install from AUR'
+                        'remove: fuzzy search and remove installed AUR packages'
+                    )
+                    _describe -t subcommands 'aur subcommand' subcmds
+                    ;;
+                *)
+                    # No further arguments for other commands
+                    ;;
+            esac
+            ;;
+    esac
+}
+
+# Tell zsh to use this completion function for the command
+compdef _fzf-pacman fzf-pacman

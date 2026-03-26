@@ -6,6 +6,8 @@
 format = """
 $directory$git_branch$git_status$character"""
 
+right_format = """$status"""
+
 add_newline = false
 
 # ── DIRECTORY ───────────────────────────────────────────────
@@ -36,8 +38,14 @@ deleted    = "✘${count}"
 
 # ── CHARACTER ───────────────────────────────────────────────
 [character]
-success_symbol = "[❯](bold fg:{color2})"
-error_symbol   = "[❯](bold fg:{color1})"
+success_symbol = "[](bold fg:{color2})"
+error_symbol   = "[](bold fg:{color1})"
+
+# ── STATUS ──────────────────────────────────────────────────
+[status]
+format            = "[$status]($style)"
+disabled          = false
+pipestatus        = true
 
 # ── DISABLED MODULES ────────────────────────────────────────
 [cmd_duration]
