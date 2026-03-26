@@ -1,2 +1,3 @@
-# Ignore face dir from the dotfiles folder
+# Ignore directories from the dotfiles folder
 face/
+wallpapers/
