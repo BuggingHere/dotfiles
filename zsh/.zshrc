@@ -172,13 +172,5 @@ function y() {
     rm -f -- "$tmp"
 }
 
-# ── TMUX ────────────────────────────────────────────────────
-# Auto-attach or create a default session when opening a terminal
-# Only runs if not already inside tmux
-if [ -z "$TMUX" ]; then
-    tmux attach -t main 2>/dev/null || tmux new -s main
-    kill -HUP $PPID
-fi
-
 # ── STARSHIP ─────────────────────────────────────────────────
 eval "$(starship init zsh)"
