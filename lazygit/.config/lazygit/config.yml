@@ -1,0 +1,74 @@
+# ══════════════════════════════════════════════════════════════
+#  LAZYGIT CONFIG — minimal, vim-oriented
+#  Location: ~/.config/lazygit/config.yml
+# ══════════════════════════════════════════════════════════════
+
+gui:
+  # Window layout — taller side panel, more log space
+  expandFocusedSidePanel: true
+  mainPanelSplitMode: horizontal
+  enlargedSideViewLocation: left
+  # Theme — dark minimal matching your setup
+  theme:
+    activeBorderColor:
+      - '#888888'
+      - bold
+    inactiveBorderColor:
+      - '#333333'
+    selectedLineBgColor:
+      - '#2a2a2a'
+    selectedRangeBgColor:
+      - '#2a2a2a'
+    cherryPickedCommitBgColor:
+      - '#3a3a3a'
+    cherryPickedCommitFgColor:
+      - '#cccccc'
+    unstagedChangesColor:
+      - '#cc6666'
+    defaultFgColor:
+      - '#aaaaaa'
+  # Show file icons
+  nerdFontsVersion: "3"
+  # Show commit hashes
+  showRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+  # Time format
+  timeFormat: "02 Jan 15:04"
+  shortTimeFormat: "15:04"
+  # Skip confirm on non-destructive actions
+  skipDiscardChangeWarning: false
+  skipStashWarning: false
+git:
+  # Auto fetch every 60 seconds
+  autoFetch: true
+  autoFetchInterval: 60
+  # Auto refresh on file change
+  autoRefresh: true
+  # Show commit graph in log
+  log:
+    showGraph: always
+    showWholeGraph: false
+  # Sign commits if you set up GPG later
+  overrideGpg: false
+  # Merge vs rebase — rebase keeps history cleaner
+  merging:
+    manualCommit: false
+    args: ""
+  pagers:
+    - colorArg: always
+      useConfig: false
+os:
+  # Open files from lazygit directly in Neovim
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim +{{line}} {{filename}}"
+  suspend: true
+keybinding:
+  universal:
+    quit: "q"
+    return: "<esc>"
+    scrollUpMain: "k"
+    scrollDownMain: "j"
+    scrollUpMainFast: "<c-u>"
+    scrollDownMainFast: "<c-d>"

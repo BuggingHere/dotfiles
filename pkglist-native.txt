@@ -38,6 +38,7 @@ imv
 inkscape
 inter-font
 kitty
+lazygit
 libcanberra
 libmythes
 libpulse
@@ -75,6 +76,7 @@ stow
 sudo
 system-config-printer
 thunar
+tmux
 trash-cli
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd

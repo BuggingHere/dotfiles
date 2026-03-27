@@ -53,7 +53,7 @@ fzf-pacman() {
         echo "$pkgs" | sed 's/^/  - /'
         _confirm "" || return
 
-        sudo pacman -S --noconfirm $(echo "$pkgs")
+        sudo pacman -S --noconfirm --needed $(echo "$pkgs")
     }
 
     _orphans() {
@@ -158,6 +158,7 @@ fzf-pacman() {
         local pkgs
         pkgs=$(echo "$updates" | awk '{print $1}' \
             | _fzf_base "Update ❯" \
+                --bind "ctrl-a:select-all" \
                 --preview "pacman -Si {1}" \
                 --header "$(echo "$updates" | wc -l) updates available")
         [[ -z "$pkgs" ]] && _no_selection && return
@@ -166,7 +167,7 @@ fzf-pacman() {
         echo "$pkgs" | sed 's/^/  - /'
         _confirm "" || return
 
-        sudo pacman -S --noconfirm $(echo "$pkgs")
+        sudo pacman -Syu --noconfirm $(echo "$pkgs")
     }
 
     # ── HELP ────────────────────────────────────────────────

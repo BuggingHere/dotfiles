@@ -120,7 +120,7 @@ alias now='date "+%Y-%m-%d %H:%M:%S"'
 alias week='date +%V'
 alias path='echo -e ${PATH//:/\\n}'
 alias ff='fastfetch --config examples/13.jsonc'
-
+alias lg="lazygit"
 
 # ── FZF ──────────────────────────────────────────────────────
 export FZF_DEFAULT_OPTS="
@@ -141,11 +141,6 @@ export FZF_CTRL_T_OPTS="--preview 'bat --color=always --line-range=:50 {}'"
 
 source <(fzf --zsh)
 
-
-# ── ZOXIDE ───────────────────────────────────────────────────
-eval "$(zoxide init zsh --cmd cd)"
-
-
 # ── SOURCE ───────────────────────────────────────────────────
 source ~/.config/zsh/fzf-pacman.zsh
 source ~/.config/zsh/fzf-tools.zsh
@@ -159,6 +154,30 @@ source ~/.config/zsh/fzf-tools.zsh
 [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# ── ZOXIDE ──────────────────────────────────────────────────
+# Initialise zoxide and replace cd entirely
+eval "$(zoxide init zsh --cmd cd)"
+# Now `cd` uses zoxide — learns your dirs automatically
+# Use `cd -` to go back, `cdi` for interactive fzf picker
+
+# ── YAZI ────────────────────────────────────────────────────
+# Shell wrapper — lets yazi change your working directory on quit
+# Press q in yazi and your terminal cd's to where you left off
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+
+# ── TMUX ────────────────────────────────────────────────────
+# Auto-attach or create a default session when opening a terminal
+# Only runs if not already inside tmux
+if [ -z "$TMUX" ]; then
+    tmux attach -t main 2>/dev/null || tmux new -s main
+fi
 
 # ── STARSHIP ─────────────────────────────────────────────────
 eval "$(starship init zsh)"
