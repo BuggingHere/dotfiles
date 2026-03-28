@@ -117,7 +117,7 @@ fzf-pacman() {
       echo "$pkgs" | sed 's/^/  - /'
       _confirm "" || return
 
-      sudo pacman -Rns --noconfirm $(echo "$pkgs")
+      yay -Rns --noconfirm $(echo "$pkgs")
       ;;
     *)
       echo "Usage: fzf-pacman aur [install|remove]"
@@ -167,7 +167,7 @@ fzf-pacman() {
     echo "$pkgs" | sed 's/^/  - /'
     _confirm "" || return
 
-    sudo pacman -Syu --noconfirm $(echo "$pkgs")
+    yay -Syu --noconfirm $(echo "$pkgs")
   }
 
   # ── HELP ────────────────────────────────────────────────

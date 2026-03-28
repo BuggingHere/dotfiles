@@ -53,7 +53,7 @@ fzf-pacman() {
         echo "$pkgs" | sed 's/^/  - /'
         _confirm "" || return
 
-        sudo pacman -S --noconfirm --needed $(echo "$pkgs")
+        yay -Syu --noconfirm $(echo "$pkgs")
     }
 
     _orphans() {

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 HYPRLAND_DEVICE="syna801a:00-06cb:cec6-touchpad"
 STATUS_FILE="/tmp/touchpad_status"
@@ -25,6 +25,6 @@ if [ -f "$STATUS_FILE" ]; then
     enable_touchpad
   fi
 else
-  # Default to enabled if status file doesn't exist
-  enable_touchpad
+  # Default to disable if status file doesn't exist
+  disable_touchpad
 fi
