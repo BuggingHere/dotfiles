@@ -2,6 +2,7 @@ apple-fonts
 apple-sf-fonts
 hyprshutdown
 nerd-fonts-noto-sans-mono
+ocrmypdf
 python-pywal16
 yay
 yay-debug
