@@ -158,7 +158,7 @@ fzf-history() {
     zle redisplay
 }
 zle -N fzf-history
-bindkey '^h' fzf-history
+bindkey '^[h' fzf-history
 
 
 # ============================================================
@@ -178,7 +178,7 @@ fzf-cd() {
     echo "  $dir"
 }
 zle -N fzf-cd
-bindkey '^j' fzf-cd
+bindkey '^[j' fzf-cd
 
 
 # ============================================================
@@ -199,7 +199,7 @@ fzf-edit() {
     nvim "$file"
 }
 zle -N fzf-edit
-bindkey '^e' fzf-edit
+bindkey '^[e' fzf-edit
 
 
 # ============================================================
@@ -219,9 +219,9 @@ fzf tools (zsh) — available commands
   fzf-edit               fuzzy open file in nvim
 
 Keybinds:
-  CTRL+H    fzf-history
-  CTRL+J    fzf-cd
-  CTRL+E    fzf-edit
+  ALT+H     fzf-history
+  ALT+J     fzf-cd
+  ALT+E     fzf-edit
   CTRL+R    fzf history search (built-in)
   CTRL+T    fzf file search    (built-in)
   ALT+C     fzf cd             (built-in)
