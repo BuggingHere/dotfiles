@@ -1,8 +1,8 @@
 include=~/.cache/wal/colors-mako
 font=Noto Sans 12
 anchor=top-right
-border-size=1
-border-radius=0
+border-size=2
+border-radius=12
 #padding=12
 layer=top
 default-timeout=5000

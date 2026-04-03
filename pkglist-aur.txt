@@ -1,6 +1,7 @@
 apple-fonts
 apple-sf-fonts
 hyprshutdown
+localsend-bin
 nerd-fonts-noto-sans-mono
 ocrmypdf
 python-pywal16

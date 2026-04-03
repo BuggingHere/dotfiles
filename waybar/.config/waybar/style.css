@@ -16,7 +16,7 @@
 
 window#waybar {
     background: transparent;
-    color:      @foreground;
+    color:      @color1;
 }
 
 /* ── MODULE CONTAINERS ──────────────────────────────────────*/
@@ -29,6 +29,7 @@ window#waybar {
     padding:       3px 6px;
 }
 
+.modules-center { padding-right: 7px; }
 .modules-left   { margin-left:  2px; }
 .modules-right  { margin-right: 2px; }
 

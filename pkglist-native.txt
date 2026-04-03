@@ -20,6 +20,7 @@ eza
 fastfetch
 ffmpeg
 ffmpegthumbnailer
+firefox
 fzf
 gimp
 git
