@@ -13,6 +13,7 @@
 
 // ── MODULES ────────────────────────────────────────────────────────
   "modules-left": [
+    "custom/archicon",
     "hyprland/workspaces"
   ],
 
@@ -32,6 +33,10 @@
     "group/group-power"
   ],
 
+  "custom/archicon": {
+    "format": "",
+    "tooltip": false
+},
 // ── WORKSPACES ─────────────────────────────────────────────────────
   "hyprland/workspaces": {
     "format": "{icon}",

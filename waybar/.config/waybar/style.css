@@ -35,8 +35,9 @@ window#waybar {
 
 /* ── WORKSPACES ─────────────────────────────────────────────*/
 #workspaces {
-    margin-right:  3px;
+    margin-right:  2px;
     padding-right: 2px;
+    padding-left: 4px;
 }
 
 #workspaces button {
@@ -112,4 +113,9 @@ window#waybar {
 #custom-pomo.finished {
     color:   #bf616a;
     opacity: 0.4;
+}
+
+#custom-archicon {
+  font-size: 17px;
+  padding-left: 6px;
 }
