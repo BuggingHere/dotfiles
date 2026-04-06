@@ -87,6 +87,7 @@ ttf-jetbrains-mono-nerd
 tumbler
 unrar
 unzip
+usbutils
 virtualbox
 waybar
 wget
