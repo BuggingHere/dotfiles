@@ -151,11 +151,11 @@
   "custom/reboot": {
     "format": "󰜉",
     "tooltip": false,
-    "on-click": "systemctl reboot"
+    "on-click": "hyprshutdown && systemctl reboot"
   },
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "systemctl poweroff"
+    "on-click": "hyprshutdown && systemctl poweroff"
   }
 }

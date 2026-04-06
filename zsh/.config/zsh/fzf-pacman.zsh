@@ -53,7 +53,7 @@ fzf-pacman() {
         echo "$pkgs" | sed 's/^/  - /'
         _confirm "" || return
 
-        yay -Syu --noconfirm $(echo "$pkgs")
+        yay -Syu --noconfirm --needed $(echo "$pkgs")
     }
 
     _orphans() {
@@ -98,7 +98,7 @@ fzf-pacman() {
                 echo "$pkgs" | sed 's/^/  - /'
                 _confirm "" || return
 
-                $helper -S --aur --noconfirm $(echo "$pkgs")
+                $helper -S --aur --noconfirm --needed $(echo "$pkgs")
                 ;;
             remove)
                 local installed_aur
