@@ -44,9 +44,8 @@ libcanberra
 libmythes
 libpulse
 libreoffice-fresh
+linux
 linux-firmware
-linux-zen
-linux-zen-headers
 mako
 man-db
 man-pages
@@ -87,6 +86,7 @@ trash-cli
 ttf-cascadia-code-nerd
 ttf-jetbrains-mono-nerd
 tumbler
+ufw
 unrar
 unzip
 usbutils

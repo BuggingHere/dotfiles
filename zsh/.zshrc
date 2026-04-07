@@ -18,23 +18,28 @@ export STARSHIP_CONFIG="$HOME/.cache/wal/starship.toml"
 export BAT_THEME="base16"
 
 
+# ── PYWAL ────────────────────────────────────────────────────
+# Load pywal colors early so FZF and other tools can use them
+[[ -f ~/.cache/wal/colors.sh ]] && source ~/.cache/wal/colors.sh
+
+
 # ── SHELL OPTIONS ────────────────────────────────────────────
-setopt AUTO_CD           # type dir name to cd into it
-setopt CORRECT           # autocorrect commands
-setopt GLOB_STAR         # enable ** glob patterns
-setopt HIST_IGNORE_DUPS  # no duplicate history entries
-setopt HIST_IGNORE_SPACE # ignore commands starting with space
-setopt SHARE_HISTORY     # share history across sessions
-setopt APPEND_HISTORY    # append instead of overwrite
-setopt AUTO_PUSHD        # push dirs to stack on cd
-setopt PUSHD_IGNORE_DUPS # no duplicate dirs in stack
-setopt EXTENDED_GLOB     # extended globbing
+setopt AUTO_CD
+setopt CORRECT
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt EXTENDED_GLOB
 
 
 # ── COMPLETION ───────────────────────────────────────────────
 fpath=(~/.zsh/completions $fpath)
 
 autoload -Uz compinit
+
 # Only regenerate completion cache once per day
 if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
     compinit
@@ -47,10 +52,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:descriptions' format '%F{yellow}-- %d --%f'
 zstyle ':completion::complete:*' gain-privileges 1
-
-
-# ── PYWAL ────────────────────────────────────────────────────
-source ~/.cache/wal/colors.sh
 
 
 # ── EZA ─────────────────────────────────────────────────────
@@ -131,17 +132,17 @@ alias ff='fastfetch --config examples/13.jsonc'
 
 
 # ── FZF ─────────────────────────────────────────────────────
-export FZF_DEFAULT_OPTS="
-  --height=40%
-  --layout=reverse
-  --border=rounded
-  --prompt='❯ '
-  --pointer='→'
-  --marker='✓'
-  --color=bg+:\${color0},bg:\${color0},spinner:\${color1},hl:\${color1}
-  --color=fg:\${color7},header:\${color1},info:\${color3},pointer:\${color1}
-  --color=marker:\${color2},fg+:\${color7},prompt:\${color4},hl+:\${color1}
-"
+export FZF_DEFAULT_OPTS="\
+  --height=40% \
+  --layout=reverse \
+  --border=rounded \
+  --prompt='❯ ' \
+  --pointer='→' \
+  --marker='✓' \
+  --color=bg+:${color0},bg:${color0},spinner:${color1},hl:${color1} \
+  --color=fg:${color7},header:${color1},info:${color3},pointer:${color1} \
+  --color=marker:${color2},fg+:${color7},prompt:${color4},hl+:${color1}"
+
 export FZF_DEFAULT_COMMAND='find . -type f -not -path "*/\.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_OPTS="--preview 'eza --icons --tree --color=always {} | head -100'"
@@ -173,7 +174,7 @@ function y() {
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# ── SOURCE ───────────────────────────────────────────────────
+# ── SOURCE CUSTOM SCRIPTS ───────────────────────────────────
 source ~/.config/zsh/fzf-pacman.zsh
 source ~/.config/zsh/fzf-tools.zsh
 
