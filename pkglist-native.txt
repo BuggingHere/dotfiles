@@ -28,11 +28,13 @@ greetd-tuigreet
 grub
 gst-plugin-pipewire
 gvfs
+halloy
 hunspell-en_us
 hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprpicker
 hyprpolkitagent
 hyprshot
 imv
