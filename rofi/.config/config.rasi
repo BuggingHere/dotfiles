@@ -1,0 +1,15 @@
+configuration {
+    modi:                   "drun,run";
+    font:                   "JetBrainsMono Nerd Font 12";
+    show-icons:             true;
+    icon-theme:             "Papirus-Dark";
+    drun-display-format:    "{name}";
+    disable-history:        false;
+    hide-scrollbar:         true;
+    display-drun:           " Apps";
+    display-run:            " Run";
+    sidebar-mode:           false;
+    matching:               "fuzzy";
+}
+
+@theme "~/.config/rofi/theme.rasi"

@@ -1,0 +1,159 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #1a1612;
+    color: #d4c9b8;
+    border-radius: 10px;
+    border: 1px solid #2e2925;
+}
+
+/* Left */
+#workspaces {
+    padding: 0 4px;
+    margin: 5px 4px;
+}
+
+#workspaces button {
+    padding: 2px 10px;
+    color: #6b6359;
+    background: transparent;
+    border-radius: 6px;
+    margin: 0 2px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #1a1612;
+    background: #8aaabb;
+}
+
+#workspaces button.urgent {
+    background: #c4746e;
+    color: #1a1612;
+}
+
+#workspaces button:hover {
+    background: #2e2925;
+    color: #d4c9b8;
+}
+
+#window {
+    color: #6b6359;
+    padding: 0 12px;
+    font-style: italic;
+    font-size: 11px;
+}
+
+/* Separator */
+#separator {
+    color: #2e2925;
+    padding: 0 4px;
+    font-size: 14px;
+}
+
+/* Center */
+#clock {
+    padding: 4px 20px;
+    color: #d4c9b8;
+    font-weight: bold;
+    font-size: 13px;
+    background: #221e1a;
+    border-radius: 8px;
+    border: 1px solid #2e2925;
+    margin: 5px 0;
+}
+
+/* Stats group */
+#custom-temp,
+#cpu,
+#memory,
+#custom-disk {
+    padding: 0 8px;
+    color: #6b6359;
+}
+
+#custom-temp {
+    color: #8aac8a;
+    padding-left: 12px;
+}
+
+#custom-temp.warning {
+    color: #d4aa6e;
+}
+
+#custom-temp.critical {
+    color: #c4746e;
+}
+
+#cpu {
+    color: #8aaabb;
+}
+
+#memory {
+    color: #b89ab8;
+}
+
+#custom-disk {
+    color: #8abbb0;
+    padding-right: 12px;
+}
+
+#custom-disk.warning {
+    color: #d4aa6e;
+}
+
+#custom-disk.critical {
+    color: #c4746e;
+}
+
+/* Right modules */
+#pulseaudio {
+    color: #8abbb0;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted {
+    color: #6b6359;
+}
+
+#network {
+    color: #b89ab8;
+    padding: 0 10px;
+}
+
+#network.disconnected {
+    color: #c4746e;
+}
+
+#battery {
+    color: #d4c9b8;
+    padding: 0 10px;
+}
+
+#battery.warning {
+    color: #d4aa6e;
+}
+
+#battery.critical {
+    color: #c4746e;
+}
+
+#battery.charging {
+    color: #8aac8a;
+}
+
+#tray {
+    padding: 0 10px;
+    margin: 5px 4px;
+    background: #221e1a;
+    border-radius: 8px;
+    border: 1px solid #2e2925;
+}

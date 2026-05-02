@@ -1,0 +1,41 @@
+# Layout
+anchor=top-right
+margin=12
+padding=12,16
+width=320
+height=100
+border-size=2
+border-radius=8
+max-icon-size=32
+
+# Timing
+default-timeout=4000
+ignore-timeout=0
+
+# Font
+font=JetBrainsMono Nerd Font 12
+
+# Colors
+background-color=#221e1aee
+text-color=#d4c9b8
+border-color=#8aaabb
+progress-color=over #2e2925
+
+# Icons
+icon-path=/usr/share/icons/Papirus-Dark
+
+# Urgency — low
+[urgency=low]
+border-color=#2e2925
+default-timeout=3000
+
+# Urgency — normal
+[urgency=normal]
+border-color=#8aaabb
+default-timeout=4000
+
+# Urgency — high
+[urgency=high]
+border-color=#c4746e
+text-color=#c4746e
+default-timeout=0

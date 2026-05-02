@@ -1,0 +1,89 @@
+* {
+    bg:         #1a1612;
+    bg-alt:     #221e1a;
+    fg:         #d4c9b8;
+    fg-alt:     #6b6359;
+    accent:     #8aaabb;
+    accent2:    #b89ab8;
+    urgent:     #c4746e;
+
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+window {
+    background-color:   @bg;
+    border:             2px;
+    border-color:       @accent;
+    border-radius:      8px;
+    width:              480px;
+}
+
+mainbox {
+    background-color:   @bg;
+    padding:            12px;
+    spacing:            8px;
+}
+
+inputbar {
+    background-color:   @bg-alt;
+    border:             1px;
+    border-color:       @accent2;
+    border-radius:      6px;
+    padding:            10px 12px;
+    spacing:            8px;
+    children:           [prompt, entry];
+}
+
+prompt {
+    color:              @accent;
+    padding:            0 4px 0 0;
+}
+
+entry {
+    color:              @fg;
+    placeholder:        "search...";
+    placeholder-color:  @fg-alt;
+}
+
+listview {
+    background-color:   @bg;
+    lines:              8;
+    scrollbar:          false;
+    spacing:            4px;
+    padding:            4px 0 0 0;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      6px;
+    padding:            8px 10px;
+    spacing:            8px;
+    orientation:        horizontal;
+}
+
+element selected {
+    background-color:   @bg-alt;
+    border:             1px;
+    border-color:       @accent;
+}
+
+element-icon {
+    size:               18px;
+    padding:            0 4px 0 0;
+}
+
+element-text {
+    color:              @fg;
+    vertical-align:     0.5;
+}
+
+element-text selected {
+    color:              @fg;
+}
+
+no-entries {
+    background-color:   @bg;
+    text-color:         @fg-alt;
+    padding:            12px;
+}
